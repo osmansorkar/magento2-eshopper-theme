@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Checkout\Block\Cart\Item\Renderer\Actions\Edit */
+?>
+
+<?php if ($block->isProductVisibleInSiteVisibility()): ?>
+	<div class="cart_delete">
+    <a class="action action-edit cart_quantity_delete"
+       href="<?php /* @escapeNotVerified */ echo $block->getConfigureUrl() ?>"
+       title="<?php echo $block->escapeHtml(__('Edit item parameters')); ?>">
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+   </a>
+</div>
+<?php endif ?>

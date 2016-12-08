@@ -1,0 +1,85 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Template for displaying new products widget
+ *
+ * @var $block \Magento\Catalog\Block\Product\Widget\NewWidget
+ */
+if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())) {
+    $type = 'widget-new-grid';
+
+    $mode = 'grid';
+
+    $image = 'new_products_content_widget_grid';
+    $title = __('New Products');
+    $items = $block->getProductCollection()->getItems();
+
+    $showWishlist = true;
+    $showCompare = true;
+    $showCart = true;
+    $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::DEFAULT_VIEW;
+    $description = false;
+}
+?>
+
+<?php if ($exist):?>
+
+    <div class="row">
+                    <div class="features_items"><!--features_items-->
+                        <h2 class="title text-center"><?php /* @escapeNotVerified */ echo $title; ?></h2>
+                        
+                             <?php foreach ($items as $_product): ?>
+                        <div class="col-sm-3">
+                            <div class="eproduct-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                    <?php  $productImage = $block->getImage($_product, $image); ?>
+                                    
+                                    <a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
+                        <?php echo $productImage->toHtml(); ?>
+                    </a>
+                    
+                                        <!-- <img src="images/shop/product12.jpg" alt="" /> -->
+                                        <h2><?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?></h2>
+                                                <p><a title="<?php echo $block->escapeHtml($_product->getName()) ?>"
+                                           href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($_product) ?>"
+                                           class="product-item-link">
+                                            <?php echo $block->escapeHtml($_product->getName()) ?>
+                                        </a></p>
+                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    </div>
+                                    <div class="product-overlay">
+                                        <div class="overlay-content">
+                                            <h2><?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?></h2>
+                                            <p><a title="<?php echo $block->escapeHtml($_product->getName()) ?>"
+                                       href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($_product) ?>"
+                                       class="product-item-link">
+                                        <?php echo $block->escapeHtml($_product->getName()) ?>
+                                    </a></p>
+                                            <a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="choose">
+                                    <div class="nav nav-pills nav-justified">
+                                     <?php if ($addToBlock = $block->getChildBlock('addto')): ?>
+                                        <?php echo $addToBlock->setProduct($_product)->getChildHtml(); ?>
+                                    <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    <?php endforeach; ?>
+                    </div><!--features_items-->
+</div>
+
+<?php endif;?>

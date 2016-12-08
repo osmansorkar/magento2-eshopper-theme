@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Theme\Model\Design\Config\MetadataProvider">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="phone_number" xsi:type="array">
+                    <item name="path" xsi:type="string">design/eshopper/phone_number</item>
+                    <item name="fieldset" xsi:type="string">other_settings/eshopper/header</item>
+                </item>
+                <item name="email_address" xsi:type="array">
+                    <item name="path" xsi:type="string">design/eshopper/email_address</item>
+                    <item name="fieldset" xsi:type="string">other_settings/eshopper/header</item>
+                </item>
+                <item name="social_fb" xsi:type="array">
+                    <item name="path" xsi:type="string">design/eshopper/social_fb</item>
+                    <item name="fieldset" xsi:type="string">other_settings/eshopper/social_media</item>
+                </item>
+                <item name="social_tw" xsi:type="array">
+                    <item name="path" xsi:type="string">design/eshopper/social_tw</item>
+                    <item name="fieldset" xsi:type="string">other_settings/eshopper/social_media</item>
+                </item>
+                <item name="social_in" xsi:type="array">
+                    <item name="path" xsi:type="string">design/eshopper/social_in</item>
+                    <item name="fieldset" xsi:type="string">other_settings/eshopper/social_media</item>
+                </item>
+                <item name="social_dr" xsi:type="array">
+                    <item name="path" xsi:type="string">design/eshopper/social_dr</item>
+                    <item name="fieldset" xsi:type="string">other_settings/eshopper/social_media</item>
+                </item>
+                <item name="social_gp" xsi:type="array">
+                    <item name="path" xsi:type="string">design/eshopper/social_gp</item>
+                    <item name="fieldset" xsi:type="string">other_settings/eshopper/social_media</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

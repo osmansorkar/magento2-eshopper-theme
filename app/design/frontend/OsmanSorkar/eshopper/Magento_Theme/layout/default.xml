@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container" htmlClass="" htmlId="header">
+            <block class="Magento\Framework\View\Element\Template" name="eshopper.header" before="-"
+                   template="Magento_Theme::defaultheader.phtml"/>
+        </referenceContainer>
+        <move element="logo" destination="eshopper.header"/>
+        <move element="top.links" destination="eshopper.header"/>
+        <move element="catalog.topnav" destination="eshopper.header"/>
+        <move element="top.search" destination="eshopper.header"/>
+        <move element="minicart" destination="eshopper.header"/>
+        <referenceContainer name="navigation.sections" remove="true"/>
+        <referenceContainer name="header.panel.wrapper" remove="true"/>
+
+        <referenceContainer name="page.top">
+            <container name="slider" htmlTag="section" htmlId="slider">
+                <container name="slider.container" htmlTag="div" htmlClass="container">
+                    <container name="slider.row" htmlTag="div" htmlClass="row">
+                        <container name="slider.col" htmlTag="div" htmlClass="col-sm-12">
+                            <container name="slide-widget" label="Slide Container"/>
+                        </container>
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+
+        <referenceContainer name="main.content" htmlClass="container page-main"/>
+        <referenceContainer name="columns" htmlClass="columns"/>
+        <!-- <referenceContainer name="main" htmlClass="column main col-sm-12"/> -->
+        <!-- <referenceContainer name="div.sidebar.additional" htmlClass="sidebar sidebar-additional col-sm-3"/> -->
+
+        <referenceContainer name="footer-container" htmlClass="" htmlId="footer">
+            <container name="footer-top" label="footer top" htmlClass="footer-top" htmlTag="div" before="-"></container>
+            <container name="footer-widget" label="footer widget" htmlClass="footer-widget" htmlTag="div"
+                       after="footer-top"></container>
+            <container after="footer-widget" name="footer-bottom">
+                <block class="Magento\Framework\View\Element\Template" name="footertop" before="-"
+                       template="Magento_Theme::defaultfooter.phtml"/>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="footer" remove="true"/>
+    </body>
+</page>

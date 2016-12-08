@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="osmansorkar_product_tab" class="OsmanSorkar\Themesettings\Block\Widget\Producttab" is_email_compatible="true"
+            placeholder_image="Magento_CatalogWidget::images/products_list.png" ttl="86400">
+        <label translate="true">Product Tab</label>
+        <description translate="true">Product Tab</description>
+        <parameters>
+
+            <parameter name="template" xsi:type="select" required="true" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="widget/producttab.phtml" selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                </options>
+            </parameter>
+
+            <parameter name="category_ids" xsi:type="text" required="true"  visible="true" sort_order="0" >
+            	<label translate="true">Category Id</label>
+            </parameter>
+
+        </parameters>
+    </widget>
+
+    <widget id="osmansorkar_product_scroll" class="OsmanSorkar\Themesettings\Block\Widget\Productslide" is_email_compatible="true"
+            placeholder_image="Magento_CatalogWidget::images/products_list.png" ttl="86400">
+        <label translate="true">Product Slider</label>
+        <description translate="true">Product Slider</description>
+        <parameters>
+            <parameter name="template" xsi:type="select" required="true" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="widget/productslide.phtml"  selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="category_ids" xsi:type="text" required="true" visible="true" sort_order="0" >
+            	<label translate="true">Category Id</label>
+            </parameter>
+
+        </parameters>
+    </widget>
+</widgets>

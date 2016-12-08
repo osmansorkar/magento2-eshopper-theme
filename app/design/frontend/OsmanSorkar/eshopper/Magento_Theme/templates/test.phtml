@@ -1,0 +1,28 @@
+<?php
+$product=$block->getProduct();
+echo get_class($product);
+echo $product->getName();
+
+print_r($product->getCategoryIds());
+//print_r($product->getCategory());
+
+foreach ($product->getCategoryCollection() as $key => $value) {
+	//echo $value->getUrl();
+	//echo get_class($value);
+	echo $value->getId();
+	//print_r($value->getParentId());
+		print_r($value->getParentIds());
+
+}
+?>
+
+<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('home-slider')->toHtml();
+
+echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('home')->toHtml();
+
+//$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+//Load product by product id
+//$product = $objectManager->create('Magento\cms\Block\Product')->load($id);
+?>
+

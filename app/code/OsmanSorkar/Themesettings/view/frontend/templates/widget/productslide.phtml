@@ -1,0 +1,49 @@
+<?php /* @var $block OsmanSorkar\Themesettings\Block\Widget\Productslide */ ?>
+<?php
+$image = 'new_products_content_widget_grid';
+$products=$block->getProducts();
+?>
+					<div class="recommended_items"><!--recommended_items-->
+						<h2 class="title text-center">recommended items</h2>
+						
+						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner">
+                                <div class="item active">
+                                <?php $i=0; foreach ($products as $_product ): $i++?>
+
+									<div class="col-sm-4">
+										<div class="products-image-wrappers">
+											<div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <?php  $productImage = $block->getImage($_product, $image); ?>
+
+                                                    <a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
+                                                        <?php echo $productImage->toHtml(); ?>
+                                                    </a>
+
+                                                    <h2><?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?></h2>
+                                                    <p><a title="<?php echo $block->escapeHtml($_product->getName()) ?>"
+                                                          href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($_product) ?>"
+                                                          class="product-item-link">
+                                                            <?php echo $block->escapeHtml($_product->getName()) ?>
+                                                        </a></p>
+                                                    <a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+												
+											</div>
+										</div>
+									</div>
+                                    <?php if($i==3){ ?> </div><div class="item"> <?php } ?>
+
+
+                                <?php endforeach; ?>
+                                </div>
+							</div>
+							 <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+								<i class="fa fa-angle-left"></i>
+							  </a>
+							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+								<i class="fa fa-angle-right"></i>
+							  </a>			
+						</div>
+					</div><!--/recommended_items-->

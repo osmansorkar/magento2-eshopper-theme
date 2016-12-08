@@ -1,0 +1,4 @@
+block_identifier,type_code,theme_path,title,page_group,group_data
+main_slide,cms_static_block,frontend/OsmanSorkar/eshopper,Home Page Main Slide,pages,"a:2:{s:5:""block"";s:12:""slide-widget"";s:13:""layout_handle"";s:13:""cms_page_view"";}"
+footer_top_information,cms_static_block,frontend/OsmanSorkar/eshopper,Footer Top Information,all_pages,"a:1:{s:5:""block"";s:10:""footer-top"";}"
+footer_widget,cms_static_block,frontend/OsmanSorkar/eshopper,Footer Widget,all_pages,"a:1:{s:5:""block"";s:13:""footer-widget"";}"
